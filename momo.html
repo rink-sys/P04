@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- DEVELOPER: Prajwal shah, IS117-001, Fall 2024 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mo:Mo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link href="css/momo.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-expand-md navbar-dark col-12" id="nav_menu">
+            <a class="navbar-brand" href="index.html">Logo</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="festiveDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Most Popular
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="festiveDropdown">
+                            <li><a class="dropdown-item current" href="momo.html">Mo:Mo</a></li>
+                            <li><a class="dropdown-item" href="#">Chowmein</a></li>
+                            <li><a class="dropdown-item" href="#">Laphing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="regionalDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Regional Specialties
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="regionalDropdown">
+                            <li><a class="dropdown-item" href="terai.html">Terai</a></li>
+                            <li><a class="dropdown-item" href="#">Hilly</a></li>
+                            <li><a class="dropdown-item" href="#">Mountain</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="aboutUs.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Main Content -->
+        <div class="carousel">
+            <span class="carousel-controls left" onclick="prevSlide()">&#8249;</span>
+            <img id="carousel-image" src="assets/momo1.jpg" alt="Momo Image">
+            <span class="carousel-controls right" onclick="nextSlide()">&#8250;</span>
+        </div>
+    
+        <div class="content">
+            <div class="about">
+                <h2>About</h2>
+                <p>
+                    Momo, a beloved Nepali dumpling, can be made with either non-vegetarian or vegetarian fillings, 
+                    both of which are widely popular. Non-veg momo typically includes minced meat like chicken, pork, 
+                    or buffalo, combined with onions, garlic, ginger, and spices. Veg momo is equally favored, 
+                    filled with finely chopped vegetables such as cabbage, carrots, and sometimes paneer, 
+                    seasoned with aromatic herbs and spices. It is usually served with a tangy, spicy tomato-based 
+                    sauce known as "achar".
+                </p>
+                <h3>Ingredients:</h3>
+                <p>Minced meat or mixed vegetables, onions, garlic, ginger, chilies, cilantro, soy sauce, salt, and pepper.</p>
+                <h3>Calories:</h3>
+                <p>400 - 500 calories (varies where you get them from).</p>
+            </div>
+    
+            <div class="reviews">
+                <h2>Recent Reviews</h2>
+                <div class="review">
+                    <h3>Barack Obama</h3>
+                    <p>⭐⭐⭐⭐⭐ - ABC Restaurant</p>
+                    <p>These are some authentic Nepali momo that I have had after such a long time. Truly reminds me of my hometown!</p>
+                </div>
+                <div class="review">
+                    <h3>Joe Biden</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>Simply the best!!</p>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            const images = ["assets/momo1.jpg", "assets/momo2.jpg", "assets/momo3.jpg"]; // Add your image paths
+            let currentImage = 0;
+    
+            function prevSlide() {
+                currentImage = (currentImage - 1 + images.length) % images.length;
+                document.getElementById("carousel-image").src = images[currentImage];
+            }
+    
+            function nextSlide() {
+                currentImage = (currentImage + 1) % images.length;
+                document.getElementById("carousel-image").src = images[currentImage];
+            }
+        </script>
+
+            <!-- Map Section -->
+            <div class="map" id="map"></div>
+
+        <!-- Bootstrap JS and Map API -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+        // Initialize map (example with Google Maps)
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 40.7128, lng: -74.0060}, // Example coordinates (New York City)
+                zoom: 12
+            });
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhGDoUMKKKofUbPfeo8Ml_gjy-7c8_gRA&callback=initMap" async defer></script>
+
+    </main>
+    
+    <footer class="footer page-footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <p class="text-center mb-0">&copy; Prajwal Shah, 2024 | <a href="#" class="text-white">Terms of Use</a> | <a href="#" class="text-white">Privacy Statement</a></p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

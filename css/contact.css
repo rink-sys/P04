@@ -1,0 +1,76 @@
+/* DEVELOPER Prajwal Shah, IS117-001, Fall 2024 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    line-height: 2.5;
+}
+
+#nav_menu {
+    background: linear-gradient(90deg, #89253e, #3a6186);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#nav_menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#nav_menu .nav-link {
+    color: white !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease, font-style 0.3s ease;
+}
+
+#nav_menu .nav-link:hover {
+    background-color: #575757;
+    color: #ffd700 !important;
+    border-radius: 5px;
+}
+
+#nav_menu .nav-link.current {
+    color: #ffd700 !important;
+    text-decoration: underline;
+}
+
+.dropdown-menu {
+    background-color: #3a6186;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover {
+    background-color: #575757;
+    color: #ffd700;
+}
+
+/* Footer Styles */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: aliceblue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+}
